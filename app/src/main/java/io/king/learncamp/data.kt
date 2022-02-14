@@ -1,7 +1,8 @@
 package io.king.learncamp
 
 data class Profile(
-    var pic : Int,
-    var name : String,
-    var job: String
+    var picture : Int,
+    var names : String,
+    var jobs: String,
+    var story : String
 )

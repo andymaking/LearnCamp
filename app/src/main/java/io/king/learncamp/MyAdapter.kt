@@ -10,26 +10,41 @@ import androidx.recyclerview.widget.RecyclerView
 class MyAdapter (private val profileList: ArrayList<Profile>) :
     RecyclerView.Adapter<MyAdapter.MyViewHolder>() {
 
+    private lateinit var mListner : onItemClickListener
+
+    interface onItemClickListener{
+        fun onItemClick(position: Int)
+    }
+    fun setItemClickListener(listener: onItemClickListener){
+        mListner = listener
+    }
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val itemView = LayoutInflater.from(parent.context).inflate(R.layout.content, parent, false)
-        return MyViewHolder(itemView)
+        return MyViewHolder(itemView, mListner)
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val currentItem = profileList[position]
-        holder.profilePicture.setImageResource(currentItem.pic)
-        holder.profileName.text = currentItem.name
-        holder.profileJob.text = currentItem.job
+        holder.profilePicture.setImageResource(currentItem.picture)
+        holder.profileName.text = currentItem.names
+        holder.profileJob.text = currentItem.jobs
     }
 
     override fun getItemCount(): Int {
         return profileList.size
     }
 
-    class  MyViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
+    class  MyViewHolder(itemView: View, listener: onItemClickListener): RecyclerView.ViewHolder(itemView){
 
         val profilePicture : ImageView = itemView.findViewById(R.id.picture)
         val profileName : TextView = itemView.findViewById(R.id.names)
         val profileJob : TextView = itemView.findViewById(R.id.jobs)
+
+        init {
+            itemView.setOnClickListener{
+                listener.onItemClick(adapterPosition)
+            }
+        }
     }
 }

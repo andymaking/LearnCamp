@@ -1,7 +1,10 @@
 package io.king.learncamp
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
+import android.widget.Toast
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -13,7 +16,8 @@ class MainActivity : AppCompatActivity() {
     private lateinit var profileList : ArrayList<Profile>
     lateinit var pictures : Array<Int>
     lateinit var names : Array<String>
-    lateinit var jobs : Array<String>
+    private lateinit var jobs : Array<String>
+    lateinit var story : Array<String>
 
     private val binding: ActivityMainBinding by lazy {
         ActivityMainBinding.inflate(layoutInflater)
@@ -69,6 +73,21 @@ class MainActivity : AppCompatActivity() {
             "Cinematographer",
         )
 
+        story = arrayOf(
+            "Banker",
+            "Doctor",
+            "Lawyer",
+            "Engineer",
+            "Developer",
+            "Cinematographer",
+            "Banker",
+            "Doctor",
+            "Lawyer",
+            "Engineer",
+            "Developer",
+            "Cinematographer",
+        )
+
         recyclerView = binding.recyclerView
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.setHasFixedSize(true)
@@ -78,11 +97,27 @@ class MainActivity : AppCompatActivity() {
     }
     private fun getUserData() {
         for (i in pictures.indices){
-            val person = Profile(pictures[i],names[i], jobs[i])
+            val person = Profile(pictures[i],names[i], jobs[i], story[i])
             profileList.add(person)
         }
 
-        recyclerView.adapter = MyAdapter(profileList)
+        var adapter = MyAdapter(profileList)
+        recyclerView.adapter = adapter
+
+        adapter.setItemClickListener(object : MyAdapter.onItemClickListener{
+            override fun onItemClick(position: Int) {
+
+                val intent = Intent(this@MainActivity, ProfileActivity::class.java)
+                intent.putExtra("name2", profileList[position].names)
+                intent.putExtra("job2", profileList[position].jobs)
+                intent.putExtra("imageView2", profileList[position].picture)
+                intent.putExtra("story", profileList[position].story)
+
+                startActivity(intent)
+
+            }
+
+        })
 
     }
 

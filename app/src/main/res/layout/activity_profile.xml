@@ -1,20 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
-    tools:context=".ProfileFragment"
-    android:gravity="center">
-
+    android:gravity="center"
+    tools:context=".ProfileActivity">
 
     <ImageView
         android:id="@+id/imageView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
         android:src="@drawable/halima"
-        android:paddingBottom="20dp"/>
+        android:paddingBottom="20dp" />
 
     <TextView
         android:id="@+id/names2"
@@ -33,4 +31,15 @@
         android:textSize="27sp"
         android:textColor="#AB1B65"
         android:paddingTop="20dp" />
+
+    <TextView
+        android:id="@+id/story"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Banker"
+        android:visibility="gone"
+        android:textSize="27sp"
+        android:textColor="#AB1B65"
+        android:paddingTop="20dp" />
+
 </LinearLayout>

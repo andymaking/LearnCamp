@@ -5,6 +5,7 @@
       <map>
         <entry key="app/src/main/res/layout-v23/content.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1875" />
+        <entry key="app/src/main/res/layout/activity_profile.xml" value="0.19947916666666668" />
         <entry key="app/src/main/res/layout/content.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_list.xml" value="0.2" />
         <entry key="app/src/main/res/layout/fragment_profile.xml" value="0.2" />
