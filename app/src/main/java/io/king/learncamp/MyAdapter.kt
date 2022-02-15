@@ -26,7 +26,7 @@ class MyAdapter (private val profileList: ArrayList<Profile>) :
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val currentItem = profileList[position]
-        holder.profilePicture.setImageResource(currentItem.picture)
+        holder.profilePicture.setImageResource(currentItem.pictures)
         holder.profileName.text = currentItem.names
         holder.profileJob.text = currentItem.jobs
     }

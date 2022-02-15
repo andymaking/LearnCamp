@@ -110,7 +110,7 @@ class MainActivity : AppCompatActivity() {
                 val intent = Intent(this@MainActivity, ProfileActivity::class.java)
                 intent.putExtra("name2", profileList[position].names)
                 intent.putExtra("job2", profileList[position].jobs)
-                intent.putExtra("imageView2", profileList[position].picture)
+                intent.putExtra("imageView2", profileList[position].pictures)
                 intent.putExtra("story", profileList[position].story)
 
                 startActivity(intent)

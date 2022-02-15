@@ -2,4 +2,7 @@
     <string name="app_name">LearnCamp</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="madam">Madam John Imoh</string>
+    <string name="banker">Banker</string>
+    <string name="changeable">changeable</string>
 </resources>
