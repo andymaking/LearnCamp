@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var recyclerView: RecyclerView
     private lateinit var profileList : ArrayList<Profile>
     lateinit var pictures : Array<Int>
-    lateinit var names : Array<String>
+    private lateinit var names : Array<String>
     private lateinit var jobs : Array<String>
     lateinit var story : Array<String>
 
@@ -74,18 +74,18 @@ class MainActivity : AppCompatActivity() {
         )
 
         story = arrayOf(
-            "Banker",
-            "Doctor",
-            "Lawyer",
-            "Engineer",
-            "Developer",
-            "Cinematographer",
-            "Banker",
-            "Doctor",
-            "Lawyer",
-            "Engineer",
-            "Developer",
-            "Cinematographer",
+            getString(R.string.bankers),
+            getString(R.string.doctor),
+            getString(R.string.lawyer),
+            getString(R.string.engineer),
+            getString(R.string.developer),
+            getString(R.string.cinematographer),
+            getString(R.string.bankers),
+            getString(R.string.doctor),
+            getString(R.string.lawyer),
+            getString(R.string.engineer),
+            getString(R.string.developer),
+            getString(R.string.cinematographer),
         )
 
         recyclerView = binding.recyclerView
