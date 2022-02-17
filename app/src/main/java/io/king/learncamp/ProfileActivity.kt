@@ -2,10 +2,7 @@ package io.king.learncamp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.ImageView
-import android.widget.TextView
-import android.widget.Toast
-import io.king.learncamp.databinding.ActivityMainBinding
+import com.bumptech.glide.Glide
 import io.king.learncamp.databinding.ActivityProfileBinding
 
 class ProfileActivity : AppCompatActivity() {
@@ -26,7 +23,7 @@ class ProfileActivity : AppCompatActivity() {
         val bundle : Bundle? = intent.extras
 
         val story = bundle!!.getString("story")
-        val imagers = bundle.getInt("imagesView2")
+        val imagers = bundle.getInt("imageView2")
         val jobs = bundle.getString("job2")
         val names = bundle.getString("name2")
 
@@ -34,7 +31,9 @@ class ProfileActivity : AppCompatActivity() {
         jobNew.text = jobs
         namesNew.text = names
         storyOne.text = story
-        imageView2.setImageResource(imagers)
 
+        Glide.with(this)
+            .load(imagers)
+            .into(imageView2);
     }
 }
